@@ -1,13 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
     <header style={styles.header}>
       <h1 style={styles.title}>Wissam Tahiri</h1>
       <nav>
-        <a href="#about" style={styles.link}>À propos</a>
-        <a href="#projects" style={styles.link}>Projets</a>
-        <a href="#contact" style={styles.link}>Contact</a>
+        <Link to="/" style={styles.link}>Accueil</Link>
+        <Link to="/about" style={styles.link}>À propos</Link>
+        <Link to="/projects" style={styles.link}>Projets</Link>
+        <Link to="/contact" style={styles.link}>Contact</Link>
       </nav>
     </header>
   )

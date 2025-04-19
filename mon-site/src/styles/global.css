@@ -5,3 +5,34 @@ body {
     color: #333;
   }
   
+  h3 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    position: relative;
+    color: #0056b3;
+  }
+  
+  h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #0056b3;
+    margin-top: 6px;
+    border-radius: 5px;
+  }
+  
+  ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin-bottom: 0.75rem;
+    list-style-type: "✔️ ";
+    padding-left: 0.5rem;
+  }
+  
