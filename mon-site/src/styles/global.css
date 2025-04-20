@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-image:linear-gradient(#b5c6e0,#ebf4f5);
     color: #333;
   }
   
@@ -32,7 +32,10 @@ body {
   
   ul li {
     margin-bottom: 0.75rem;
-    list-style-type: "✔️ ";
+    list-style-type: "▶️ ";
     padding-left: 0.5rem;
   }
+
+
+  
   

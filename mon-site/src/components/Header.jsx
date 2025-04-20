@@ -17,13 +17,16 @@ function Header() {
 
 const styles = {
   header: {
-    backgroundColor: '#282c34',
-    padding: '1rem 2rem',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    color: 'white',
-  },
+    position: "sticky",
+    top: 0,
+    zIndex: 1000,
+    backgroundColor: "#282c34",
+    padding: "1rem 2rem",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    color: "white",
+  },  
   title: {
     margin: 0,
     fontSize: '1.5rem',
