@@ -3,8 +3,7 @@ export default function BulletPoints({ points }) {
     <ul>
       {points.map((point, index) => (
         <li key={index}>
-          <strong>{point.title}</strong>
-          {point.description}
+          <strong>{point.title}</strong> : {point.description}
         </li>
       ))}
     </ul>

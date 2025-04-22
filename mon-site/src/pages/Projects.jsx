@@ -1,15 +1,25 @@
-import React from 'react'
+import React from "react";
+import Timeline from "../components/Timeline";
+import projects from "../constants/projects.json";
+import Simon from "../components/Simon";
 
 function Projects() {
   return (
-    <section style={{ padding: '4rem 2rem' }}>
-      <h2>À propos</h2>
-      <p>
-        Je m'appelle Wissam Tahiri, étudiant en école d’ingénieur en informatique...
-      </p>
-      {/* etc. */}
-    </section>
-  )
+    <div>
+      <Timeline
+        events={projects}
+        h={
+          <p>
+            Courte liste de tous mes projets
+            <br />
+            <em>({projects.length} pour l'instant)</em>
+          </p>
+        }
+      />
+
+      <Simon />
+    </div>
+  );
 }
 
-export default Projects
+export default Projects;

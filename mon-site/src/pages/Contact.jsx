@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./Contact.css";
+import GH from "../assets/github.svg";
+import Gmail from "../assets/gmail.svg";
 
 function Contact() {
   const formRef = useRef();
@@ -36,10 +38,15 @@ function Contact() {
 
   return (
     <section style={styles.section}>
-      <h2 style={styles.title}>Liens importants</h2>
       <div style={styles.links}>
+        <h3 style={styles.title}>Liens importants</h3>
         <a href="mailto:wissam.tahiri.75@gmail.com" className="link-card">
-          📧 <span>wissam.tahiri.75@gmail.com</span>
+          <img
+            src={Gmail}
+            alt="Gmail"
+            style={{ width: "24px", marginRight: "8px" }}
+          />
+          <span>wissam.tahiri.75@gmail.com</span>
         </a>
         <a
           href="https://github.com/WissThr"
@@ -47,13 +54,18 @@ function Contact() {
           rel="noreferrer"
           className="link-card"
         >
-          🐱 <span>github.com/WissThr</span>
+          <img
+            src={GH}
+            alt="GitHub"
+            style={{ width: "24px", marginRight: "8px" }}
+          />
+          <span>github.com/WissThr</span>
         </a>
       </div>
 
       <form ref={formRef} onSubmit={sendEmail} style={styles.form}>
         <h3 style={styles.title}>Envoyer un message</h3>
-        <p style={styles.links}>
+        <p style={styles.txt}>
           Si vous souhaitez me contacter, remplissez vos informations
           ci-dessous. <br />
           Je vous répondrai dès que possible!
@@ -107,7 +119,6 @@ const styles = {
   },
   title: {
     fontSize: "2rem",
-    marginBottom: "2rem",
     color: "#0056b3",
   },
   links: {
@@ -157,6 +168,10 @@ const styles = {
     border: "none",
     borderRadius: "6px",
     cursor: "pointer",
+  },
+  txt: {
+    fontSize: "1rem",
+    marginTop: "0 px",
   },
 };
 

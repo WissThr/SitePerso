@@ -1,0 +1,32 @@
+[
+  {
+    "year": "2020",
+    "title": "Bac Scientifique",
+    "desc": "Mention - Lycée L'Espérence Aulnay-Sous-Bois",
+    "icon": "🎓"
+  },
+  {
+    "year": "2020-2021",
+    "title": "Concours Médecine",
+    "desc": "1ère année en PASS - Université Paris-Cité",
+    "icon": "💊"
+  },
+  {
+    "year": "2021-2023",
+    "title": "Prépa Intégrée",
+    "desc": "CP2I - Institut Galilée",
+    "icon": "📘"
+  },
+  {
+    "year": "2023-2024",
+    "title": "Cycle Ingé – Année 1",
+    "desc": "Bases solides en informatique - Sup Galilée",
+    "icon": "💻"
+  },
+  {
+    "year": "2024-2025",
+    "title": "Cycle Ingé – Année 2",
+    "desc": "Théorie, Développement, IA, Systèmes",
+    "icon": "⚙️"
+  }
+]

@@ -3,7 +3,9 @@ import Timeline from "../components/Timeline";
 import Wiss from "../assets/Wiss.png";
 import HW from "../assets/hello-world.gif";
 import BulletPoints from "../components/BulletPoints";
-import bulletPointsElements from "../constants/bullet-points.json";
+import cp2i from "../constants/cp2i.json";
+import ing from "../constants/ing.json";
+import timeline from "../constants/timeline.json";
 
 function About() {
   return (
@@ -30,32 +32,30 @@ function About() {
         </div>
 
         <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="100">
+          <h3>Ma vision</h3>
           <div style={styles.flexRow}>
-            <h3>Ma vision</h3>
-            <img
-              src={HW}
-              alt="Hello World"
-              style={{ width: "200px", height: "150px", paddingRight: "10px" }}
-            />
+            <div style={styles.textCol}>
+              <p>
+                J’aime <strong>comprendre</strong> comment fonctionnent les
+                choses et <u>explorer</u> les mécanismes qui les animent. <br />
+                Mais ce que j’aime par-dessus tout, c’est les voir{" "}
+                <u>prendre vie</u> : transformer une idée abstraite en réalité
+                tangible grâce à un code fonctionnel. C’est là que réside{" "}
+                <strong>ma véritable motivation</strong>.
+              </p>
+              <p>
+                Pour moi, rien ne vaut la <strong>pratique</strong> : c’est en
+                expérimentant qu’on apprend, qu’on progresse, et qu’on
+                s’implique pleinement dans la conception d’un projet – tout en
+                découvrant les <strong>technologies</strong> qui y sont liées.
+              </p>
+            </div>
+            <img src={HW} alt="Hello World" style={styles.image} />
           </div>
-          <p>
-            J’aime <strong>comprendre</strong> comment fonctionnent les choses
-            et <u>explorer</u> les mécanismes qui les animent. <br />
-            Mais ce que j’aime par-dessus tout, c’est les voir{" "}
-            <u>prendre vie</u> : transformer une idée abstraite en réalité
-            tangible grâce à un code fonctionnel. C’est là que réside{" "}
-            <strong>ma véritable motivation</strong>.
-          </p>
-          <p>
-            Pour moi, rien ne vaut la <strong>pratique</strong> : c’est en
-            expérimentant qu’on apprend, qu’on progresse, et qu’on s’implique
-            pleinement dans la conception d’un projet – tout en découvrant les{" "}
-            <strong>technologies</strong> qui y sont liées.
-          </p>
         </div>
         <div style={styles.block} data-aos="fade-up" data-aos-delay="200">
           <h3>Mon parcours</h3>
-          <Timeline />
+          <Timeline events={timeline} h={"Mon parcours résumé"} />
           <p>
             Après un <strong>Bac Scientifique</strong> <u>avec mention</u> et
             une année en médecine infructueuse, j’ai décidé de me réorienter
@@ -70,34 +70,7 @@ function About() {
             fondamentales :
           </p>
 
-          <BulletPoints points={bulletPointsElements} />
-
-          <ul>
-            <li>
-              <strong>Mathématques :</strong> Algèbre, Analyse, Probabilités,
-              Statistiques
-            </li>
-            <li>
-              <strong>Informatique :</strong> Algorithmique et Complexité,
-              Programmation en C, Heuristique
-            </li>
-            <li>
-              <strong>Physique :</strong> Mécanique du point, Électromagnétisme,
-              Optique
-            </li>
-            <li>
-              <strong>Chimie :</strong> Thermodynamique, Chimie organique,
-              Réactions
-            </li>
-            <li>
-              <strong>Anglais :</strong> Cours, expression orale et préparation
-              au TOEIC
-            </li>
-            <li>
-              <strong>Culture Ingénieur :</strong> Techniques d'expression et de
-              communication, culture scientifique et éthique
-            </li>
-          </ul>
+          <BulletPoints points={cp2i} />
 
           <p>
             Après deux années de travail intensif, j'ai intégré la filière{" "}
@@ -108,28 +81,9 @@ function About() {
             J’ai validé ma première année avec succès, en consolidant mes acquis
             de prépa et en découvrant de nouvelles disciplines :
           </p>
-
-          <ul>
-            <li>
-              <strong>Aspects théoriques :</strong> Analyse de graphes,
-              Complexité et Algorithmie, Logique, Intelligence Artificielle,
-              Analyse de données
-            </li>
-            <li>
-              <strong>Aspects pratiques :</strong> Programmation orientée objet,
-              Développement Web, Systèmes d'exploitation, avec des projets
-              concrets pour appliquer les connaissances
-            </li>
-            <li>
-              <strong>Autres domaines :</strong> Réseaux, Bases de données,
-              Circuits logiques et Administration Système Linux
-            </li>
-            <li>
-              <strong>Polyvalence :</strong> Économie, Droit du travail,
-              Écologie, Éthique et Anglais (en continuité avec la prépa)
-            </li>
-          </ul>
+          <BulletPoints points={ing}></BulletPoints>
         </div>
+
         <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="300">
           <div style={styles.headingWithButton}>
             <h3 style={styles.h3}>Et maintenant ?</h3>
@@ -195,6 +149,7 @@ const styles = {
     borderRadius: "10px",
     margin: "2rem 0",
     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+    maxWidth: "800px",
   },
   blockAlt: {
     padding: "2.5rem 0",
@@ -204,6 +159,7 @@ const styles = {
     borderRadius: "10px",
     margin: "2rem 0",
     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
+    maxWidth: "800px",
   },
   flexRow: {
     display: "flex",
@@ -218,12 +174,11 @@ const styles = {
     minWidth: "250px",
   },
   image: {
-    width: "300px",
-    height: "300px",
+    height: "100%", // prendre toute la hauteur du conteneur
+    maxHeight: "200px", // limite visuelle raisonnable
     objectFit: "cover",
-    borderRadius: "12px",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
-    paddingRight: "10px",
+    borderRadius: "8px",
+    flexShrink: 0,
   },
   headingWithButton: {
     paddingTop: "1rem",

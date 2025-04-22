@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Mathématiques",
+    "description": "Algèbre, Analyse, Probabilités, Statistiques"
+  },
+  {
+    "title": "Informatique",
+    "description": "Algorithmique et Complexité, Programmation en C, Heuristique"
+  },
+  {
+    "title": "Physique",
+    "description": "Mécanique du point, Électromagnétisme, Optique"
+  },
+  {
+    "title": "Chimie",
+    "description": "Thermodynamique, Chimie organique, Réactions"
+  },
+  {
+    "title": "Anglais",
+    "description": "Cours, expression orale et préparation au TOEIC"
+  },
+  {
+    "title": "Culture Ingénieur",
+    "description": "Techniques d'expression et de communication, culture scientifique et éthique"
+  }
+]

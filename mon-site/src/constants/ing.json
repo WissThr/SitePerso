@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Aspects théoriques",
+    "description": "Analyse de graphes, Complexité et Algorithmie, Logique, Intelligence Artificielle, Analyse de données"
+  },
+  {
+    "title": "Aspects pratiques",
+    "description": "Programmation orientée objet, Développement Web, Systèmes d'exploitation, avec des projets concrets pour appliquer les connaissances"
+  },
+  {
+    "title": "Autres domaines",
+    "description": "Réseaux, Bases de données, Circuits logiques et Administration Système Linux"
+  },
+  {
+    "title": "Polyvalence",
+    "description": "Économie, Droit du travail, Écologie, Éthique et Anglais (en continuité avec la prépa)"
+  }
+]

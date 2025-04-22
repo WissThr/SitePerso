@@ -1,0 +1,69 @@
+[
+  {
+    "year": "2022",
+    "title": "Jeu du ballon",
+    "desc": "Maths et physique en informatique en C. Fait en 1ère année de prépa.",
+    "icon": "⚽"
+  },
+  {
+    "year": "2022",
+    "title": "Jeu de Simon",
+    "desc": "1er vrai programme en C.",
+    "icon": "simon",
+    "key": "simon"
+  },
+  {
+    "year": "2023",
+    "title": "Bataille navale",
+    "desc": "Utilisation de GTK et 1ère utilisation d'un code externe.",
+    "icon": "🚢"
+  },
+  {
+    "year": "2023",
+    "title": "Voyageur de commerce",
+    "desc": "Toujours en C, approche des différentes méthodes heuristiques.",
+    "icon": "amazon"
+  },
+  {
+    "year": "2024",
+    "title": "Train Simulator",
+    "desc": "Jeu de simulation de train en Java Script.",
+    "icon": "🚂"
+  },
+  {
+    "year": "2024",
+    "title": "Jeu de la vie en N-dimension",
+    "desc": "Jeu de la vie en N-dimension en Java.",
+    "icon": "conway"
+  },
+  {
+    "year": "2024",
+    "title": "Cookie Clicker sur mobile",
+    "desc": "Jeu incrémental pour découvrir Kotlin et le développement d'applications mobiles.",
+    "icon": "🍪"
+  },
+  {
+    "year": "2025",
+    "title": "Site association",
+    "desc": "Site pour une association sportive sous Maven. Avec API REST, Base de donnée Hibernate et management des membres/clubs.",
+    "icon": "⚙️"
+  },
+  {
+    "year": "2025",
+    "title": "VV155",
+    "desc": "Automate en Python, répond à des commandes pour effectuer des actions.",
+    "icon": "VV155"
+  },
+  {
+    "year": "2025",
+    "title": "CoVoitUniv",
+    "desc": "Site de covoiturage pour le personnel de l'USPN. ReactJS, Python, Flask, API REST, SQLAlchemy.",
+    "icon": "covoit"
+  },
+  {
+    "year": "2025",
+    "title": "Ce site",
+    "desc": "Site personnel sous ReactJS pour valoriser et compléter mon CV. ",
+    "icon": "💻"
+  }
+]
