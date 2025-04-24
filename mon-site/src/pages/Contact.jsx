@@ -44,7 +44,12 @@ function Contact() {
           <img
             src={Gmail}
             alt="Gmail"
-            style={{ width: "24px", marginRight: "8px" }}
+            style={{
+              width: "24px",
+              padding: "4px",
+              borderRadius: "20%",
+              backgroundColor: "white",
+            }}
           />
           <span>wissam.tahiri.75@gmail.com</span>
         </a>
@@ -57,7 +62,12 @@ function Contact() {
           <img
             src={GH}
             alt="GitHub"
-            style={{ width: "24px", marginRight: "8px" }}
+            style={{
+              width: "24px",
+              padding: "4px",
+              borderRadius: "20%",
+              backgroundColor: "white",
+            }}
           />
           <span>github.com/WissThr</span>
         </a>

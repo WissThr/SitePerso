@@ -16,7 +16,8 @@
     "year": "2023",
     "title": "Bataille navale",
     "desc": "Utilisation de GTK et 1ère utilisation d'un code externe.",
-    "icon": "🚢"
+    "icon": "🚢",
+    "key": "naval"
   },
   {
     "year": "2023",
@@ -28,13 +29,15 @@
     "year": "2024",
     "title": "Train Simulator",
     "desc": "Jeu de simulation de train en Java Script.",
-    "icon": "🚂"
+    "icon": "🚂",
+    "key": "train"
   },
   {
     "year": "2024",
     "title": "Jeu de la vie en N-dimension",
     "desc": "Jeu de la vie en N-dimension en Java.",
-    "icon": "conway"
+    "icon": "conway",
+    "key": "conway"
   },
   {
     "year": "2024",
@@ -52,13 +55,15 @@
     "year": "2025",
     "title": "VV155",
     "desc": "Automate en Python, répond à des commandes pour effectuer des actions.",
-    "icon": "VV155"
+    "icon": "VV155",
+    "key": "VV155"
   },
   {
     "year": "2025",
     "title": "CoVoitUniv",
     "desc": "Site de covoiturage pour le personnel de l'USPN. ReactJS, Python, Flask, API REST, SQLAlchemy.",
-    "icon": "covoit"
+    "icon": "covoit",
+    "key": "covoit"
   },
   {
     "year": "2025",
