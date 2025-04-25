@@ -1,17 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import { BrowserRouter } from 'react-router-dom'
-import './styles/global.css'
-import 'aos/dist/aos.css'
-import AOS from 'aos'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import ScrollToTop from "./components/ScrollToTop";
+import { BrowserRouter } from "react-router-dom";
+import "./styles/global.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
-AOS.init()
+AOS.init();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);

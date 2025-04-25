@@ -18,7 +18,7 @@ function About() {
             <div style={styles.textCol}>
               <p>
                 Je m'appelle <strong>Wissam Tahiri</strong>,{" "}
-                <u>étudiant en ingénieur informatique</u> au sein de l'école
+                <u>étudiant en ingénieurie informatique</u> au sein de l'école
                 d'ingénieurs <strong>Sup Galilée</strong>. <br />
                 Passionné par le développement sous toutes ses formes, je suis
                 également fasciné par le potentiel de l’
@@ -27,7 +27,12 @@ function About() {
                 ouvre pour l’avenir.
               </p>
             </div>
-            <img src={Wiss} alt="Wissam Tahiri" style={styles.image} />
+            <img
+              src={Wiss}
+              alt="Wissam Tahiri"
+              style={styles.image}
+              onContextMenu={(e) => e.preventDefault()}
+            />
           </div>
         </div>
 
@@ -86,7 +91,7 @@ function About() {
 
         <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="300">
           <div style={styles.headingWithButton}>
-            <h3 style={styles.h3}>Et maintenant ?</h3>
+            <h3 style={styles.tit}>Et maintenant ?</h3>
             <a href="/CV_WTahiri.pdf" download style={styles.cvButton}>
               📄 Télécharger mon CV
             </a>
@@ -123,49 +128,45 @@ function About() {
 const styles = {
   section: {
     padding: "4rem 2rem",
-    backgroundImage: "linear-gradient(#b5c6e0,#ebf4f5)",
     minHeight: "100vh",
+    margin: "2rem auto",
+    width: "90%",
+    boxSizing: "border-box",
   },
   title: {
     textAlign: "center",
-    fontSize: "2.5rem",
+    fontSize: "3.5rem",
     marginBottom: "3rem",
     fontWeight: "700",
-    color: "#222",
+    color: "#F9F7F7",
     position: "relative",
   },
   content: {
-    maxWidth: "850px",
-    margin: "0 auto",
-    fontSize: "1.05rem",
+    fontSize: "1.5rem",
     lineHeight: "1.8",
     color: "#333",
   },
   block: {
-    padding: "2.5rem 0",
-    paddingLeft: "10px",
-    paddingTop: "1px",
-    backgroundColor: "#f9f9fb",
+    padding: "2.5rem",
+    backgroundColor: "#F9F7F7",
     borderRadius: "10px",
-    margin: "2rem 0",
+    margin: "2rem auto",
+    width: "90%",
     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-    maxWidth: "800px",
   },
   blockAlt: {
-    padding: "2.5rem 0",
-    paddingLeft: "10px",
-    paddingTop: "1px",
-    backgroundColor: "#ffffff",
+    padding: "2.5rem",
+    backgroundColor: "#F9F7F7",
     borderRadius: "10px",
-    margin: "2rem 0",
+    margin: "2rem auto",
+    width: "90%",
     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-    maxWidth: "800px",
   },
   flexRow: {
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    gap: "2rem",
+    gap: "3rem",
     flexWrap: "wrap",
     marginTop: "1rem",
   },
@@ -174,11 +175,11 @@ const styles = {
     minWidth: "250px",
   },
   image: {
-    height: "100%", // prendre toute la hauteur du conteneur
-    maxHeight: "200px", // limite visuelle raisonnable
+    height: "350px", // MODIFICATION : pour être plus responsive
+    maxWidth: "450px", // MODIFICATION : limite la largeur max de l'image
     objectFit: "cover",
     borderRadius: "8px",
-    flexShrink: 0,
+    flex: 2,
   },
   headingWithButton: {
     paddingTop: "1rem",
@@ -193,17 +194,17 @@ const styles = {
   h3: {
     fontSize: "1.4rem",
     fontWeight: "600",
-    color: "#0056b3",
+    color: "#112D4E",
     margin: 0,
   },
   cvButton: {
     padding: "0.6rem 1.2rem",
-    backgroundColor: "#0056b3",
+    backgroundColor: "#3F72AF",
     color: "#fff",
     textDecoration: "none",
     borderRadius: "8px",
     fontWeight: "bold",
-    fontSize: "0.95rem",
+    fontSize: "2rem",
     transition: "background-color 0.3s ease",
     whiteSpace: "nowrap",
   },

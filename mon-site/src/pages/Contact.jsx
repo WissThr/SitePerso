@@ -123,13 +123,16 @@ function Contact() {
 const styles = {
   section: {
     padding: "4rem 2rem",
-    maxWidth: "600px",
-    margin: "0 auto",
-    fontFamily: "Arial, sans-serif",
+    minHeight: "100vh",
+    margin: "2rem auto",
+    width: "90%",
+    boxSizing: "border-box",
   },
   title: {
-    fontSize: "2rem",
-    color: "#0056b3",
+    fontSize: "3.5rem",
+    fontWeight: "600",
+    color: "#112D4E",
+    margin: 0,
   },
   links: {
     display: "flex",
@@ -138,7 +141,7 @@ const styles = {
     marginBottom: "3rem",
     alignItems: "center",
     padding: "2.5rem 0",
-    backgroundColor: "#f9f9fb",
+    backgroundColor: "#F9F7F7",
     borderRadius: "10px",
     margin: "2rem 0",
     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
@@ -149,7 +152,7 @@ const styles = {
     flexDirection: "column",
     gap: "1rem",
     padding: "10px",
-    backgroundColor: "#f9f9fb",
+    backgroundColor: "#F9F7F7",
     borderRadius: "10px",
     margin: "2rem 0",
     boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
@@ -172,7 +175,7 @@ const styles = {
   },
   button: {
     padding: "0.75rem",
-    fontSize: "1rem",
+    fontSize: "2rem",
     backgroundColor: "#0056b3",
     color: "#fff",
     border: "none",
@@ -180,8 +183,9 @@ const styles = {
     cursor: "pointer",
   },
   txt: {
-    fontSize: "1rem",
-    marginTop: "0 px",
+    fontSize: "1.5rem",
+    lineHeight: "1.8",
+    color: "#333",
   },
 };
 

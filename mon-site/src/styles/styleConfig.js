@@ -1,0 +1,36 @@
+export const projectBlockStyle = {
+  container: {
+    backgroundColor: "#F9F7F7",
+    borderRadius: "16px",
+    padding: "3rem 2rem",
+    margin: "3rem auto",
+    width: "90%",
+    maxWidth: "1200px",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+    transition: "transform 0.3s ease",
+    overflow: "hidden",
+  },
+  title: {
+    fontSize: "3rem",
+    fontWeight: "700",
+    color: "#112D4E",
+    marginBottom: "2rem",
+    textAlign: "center",
+  },
+  text: {
+    fontSize: "1.4rem",
+    lineHeight: "2",
+    color: "#333",
+    marginBottom: "1.5rem",
+    textAlign: "justify",
+  },
+  image: {
+    width: "100%",
+    maxWidth: "600px",
+    height: "auto",
+    borderRadius: "12px",
+    margin: "2rem auto",
+    display: "block",
+    boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+  },
+};

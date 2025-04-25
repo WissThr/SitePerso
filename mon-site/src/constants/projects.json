@@ -41,6 +41,12 @@
   },
   {
     "year": "2024",
+    "title": "Puissance 4 avec une IA",
+    "desc": "Jeu de puissance 4 avec une IA qui a 7 coups d'avance en C pour comprendre l'utilité et la nécessité de la librairie stdint et des structures de données.",
+    "icon": "🟡 🔴"
+  },
+  {
+    "year": "2024",
     "title": "Cookie Clicker sur mobile",
     "desc": "Jeu incrémental pour découvrir Kotlin et le développement d'applications mobiles.",
     "icon": "🍪"
@@ -69,6 +75,7 @@
     "year": "2025",
     "title": "Ce site",
     "desc": "Site personnel sous ReactJS pour valoriser et compléter mon CV. ",
-    "icon": "💻"
+    "icon": "💻",
+    "key": "site"
   }
 ]

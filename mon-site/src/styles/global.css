@@ -1,16 +1,29 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-image:linear-gradient(#b5c6e0,#ebf4f5);
-    color: #333;
-  }
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  background-image: url("../assets/home.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #DBE2EF;
+}
+
   
-  h3 {
-    font-size: 1.4rem;
+  h2 {
+    font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: 600;
     position: relative;
-    color: #0056b3;
+    color: #112D4E;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    position: relative;
+    color: #112D4E;
   }
   
   h3::after {
@@ -18,7 +31,7 @@ body {
     display: block;
     width: 40px;
     height: 3px;
-    background-color: #0056b3;
+    background-color: #112D4E;
     border-radius: 5px;
   }
   

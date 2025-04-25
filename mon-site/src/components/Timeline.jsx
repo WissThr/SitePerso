@@ -48,6 +48,20 @@ export default function Timeline({ events, h }) {
       <h4 style={styles.title}>{h}</h4>
 
       <div style={styles.sliderWrapper}>
+        <style>
+          {`
+            .slick-prev, .slick-next {
+              z-index: 10;
+            }
+
+            .slick-prev:before,
+            .slick-next:before {
+              color: black;
+              font-size: 30px;
+            }
+          `}
+        </style>
+
         <Slider {...settings}>
           {events.map((event, index) => (
             <div key={index} style={styles.cardWrapper}>
@@ -58,7 +72,7 @@ export default function Timeline({ events, h }) {
                       src={imageMap[event.icon]}
                       alt="icon"
                       style={{
-                        height: 40,
+                        height: "70px",
                         width: "auto",
                         display: "block",
                         margin: "0 auto",
@@ -83,7 +97,7 @@ export default function Timeline({ events, h }) {
                       }
                     }}
                   >
-                    Go to
+                    Voir le projet
                   </button>
                 )}
               </div>
@@ -107,48 +121,57 @@ const styles = {
     color: "#222",
   },
   sliderWrapper: {
-    maxWidth: "1100px",
+    width: "90%",
+    minHeight: "300px",
     margin: "0 auto",
     padding: "0 1rem",
   },
+
   cardWrapper: {
-    padding: "0 20px",
+    padding: "0",
     boxSizing: "border-box",
   },
+
   card: {
-    backgroundColor: "#fff",
+    backgroundColor: "#DBE2EF",
     borderRadius: "12px",
     boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
     padding: "1rem",
     textAlign: "center",
     height: "100%",
+    minHeight: "400px",
+    margin: "0 10px",
   },
+
   icon: {
-    fontSize: "2rem",
+    fontSize: "3rem",
     marginBottom: "0.5rem",
   },
   year: {
     fontWeight: "bold",
-    color: "#007bff",
-    fontSize: "1rem",
+    color: "#112D4E",
+    fontSize: "1.3rem",
     marginBottom: "0.3rem",
   },
   cardTitle: {
-    fontSize: "1.1rem",
+    fontSize: "2rem",
     fontWeight: "600",
     marginBottom: "0.5rem",
+    color: "#112D4E",
   },
   cardDesc: {
-    fontSize: "0.95rem",
-    color: "#555",
+    fontSize: "1.5rem",
+    color: "black",
   },
   button: {
     marginTop: "0.5rem",
     padding: "0.5rem 1rem",
-    backgroundColor: "#007bff",
+    backgroundColor: "#3F72AF",
     color: "#fff",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
+    fontSize: "2rem",
+    bottom: "0",
   },
 };

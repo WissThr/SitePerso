@@ -33,32 +33,31 @@ const HAUTEUR_CASE = 40;
 // Types des cases
 /*------------------------------------------------------------*/
 class Type_de_case {
-  static Foret = new Type_de_case("foret",0);
+  static Foret = new Type_de_case("foret", 0);
 
-  static Eau = new Type_de_case("eau",0);
+  static Eau = new Type_de_case("eau", 0);
 
-  static Rail_horizontal = new Type_de_case("rail horizontal",0);
+  static Rail_horizontal = new Type_de_case("rail horizontal", 0);
 
-  static Rail_vertical = new Type_de_case("rail vertical",0);
+  static Rail_vertical = new Type_de_case("rail vertical", 0);
 
   // NOTE: faisant la jonction de horizontal à vertical en allant vers la droite puis vers le haut (ou de vertical vers horizontal en allant de bas vers gauche)
-  static Rail_droite_vers_haut = new Type_de_case("rail droite vers haut",0);
+  static Rail_droite_vers_haut = new Type_de_case("rail droite vers haut", 0);
 
   // NOTE: faisant la jonction de vertical à horizontal en allant vers le haut puis vers la droite (ou de horizontal à vertical en allant de gauche vers le bas)
-  static Rail_haut_vers_droite = new Type_de_case("rail haut vers droite",0);
+  static Rail_haut_vers_droite = new Type_de_case("rail haut vers droite", 0);
 
   // NOTE: faisant la jonction de horizontal à vertical en allant vers la droite puis vers le bas (ou de vertical vers horizontal en allant de haut vers gauche)
-  static Rail_droite_vers_bas = new Type_de_case("rail droite vers bas",0);
+  static Rail_droite_vers_bas = new Type_de_case("rail droite vers bas", 0);
 
   // NOTE: faisant la jonction de vertical à horizontal en allant vers le bas puis vers la droite (ou de horizontal à vertical en allant de gauche vers le haut)
-  static Rail_bas_vers_droite = new Type_de_case("rail bas vers droite",0);
+  static Rail_bas_vers_droite = new Type_de_case("rail bas vers droite", 0);
 
-  constructor(nom,d) {
+  constructor(nom, d) {
     this.nom = nom;
-    this.debris=d;
+    this.debris = d;
   }
 }
-
 
 /*------------------------------------------------------------*/
 // Images
@@ -94,7 +93,7 @@ const IMAGE_WAGON = new Image();
 IMAGE_WAGON.src = "images/wagon.png";
 
 const IMAGE_DEBRIS = new Image();
-IMAGE_DEBRIS.src = "images/debris.png"
+IMAGE_DEBRIS.src = "images/debris.png";
 
 /************************************************************/
 // Variables globales
@@ -104,9 +103,9 @@ IMAGE_DEBRIS.src = "images/debris.png"
 let b;
 let t = null;
 let sncf = [];
-let debris=[];
+let debris = [];
 let timerId;
-let pause=false;
+let pause = false;
 
 /************************************************************/
 /* Classes */
@@ -172,7 +171,7 @@ function image_of_case(type_de_case) {
       return IMAGE_RAIL_DROITE_VERS_BAS;
     case "rail bas vers droite":
       return IMAGE_RAIL_BAS_VERS_DROITE;
-   /* case Type_de_case.debris:
+    /* case Type_de_case.debris:
       return IMAGE_DEBRIS;*/
   }
 }
@@ -262,11 +261,13 @@ window.clearTrains = function () {
   clearTrain(contexte, b);
 };
 
-
 function wagonPb(plateau, n, x, y) {
   let a = 0;
   for (let i = 0; i < n; ++i) {
-    if (plateau.cases[x - i][y].nom.includes("rail")&&plateau.cases[x - i][y].debris!=1) {
+    if (
+      plateau.cases[x - i][y].nom.includes("rail") &&
+      plateau.cases[x - i][y].debris != 1
+    ) {
       ++a;
     }
   }
@@ -353,15 +354,27 @@ function avancer(contexte, plateau) {
       dehors.push(train);
     } else if (!plateau.cases[train.x][train.y].nom.includes("rail")) {
       dehors.push(train);
-      plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+      plateau.cases[train.x][train.y] = new Type_de_case(
+        plateau.cases[train.x][train.y].nom,
+        1
+      );
       train.wagon.forEach((w) => {
-        plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+        plateau.cases[w.x][w.y] = new Type_de_case(
+          plateau.cases[w.x][w.y].nom,
+          1
+        );
       });
     } else if (plateau.cases[train.x][train.y].debris === 1) {
       dehors.push(train);
-      plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+      plateau.cases[train.x][train.y] = new Type_de_case(
+        plateau.cases[train.x][train.y].nom,
+        1
+      );
       train.wagon.forEach((w) => {
-        plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+        plateau.cases[w.x][w.y] = new Type_de_case(
+          plateau.cases[w.x][w.y].nom,
+          1
+        );
       });
     } else if (plateau.cases[train.x][train.y].nom.includes("vers bas")) {
       if (train.direction === H) {
@@ -370,9 +383,15 @@ function avancer(contexte, plateau) {
         train.direction = B;
       } else {
         dehors.push(train);
-        plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+        plateau.cases[train.x][train.y] = new Type_de_case(
+          plateau.cases[train.x][train.y].nom,
+          1
+        );
         train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+          plateau.cases[w.x][w.y] = new Type_de_case(
+            plateau.cases[w.x][w.y].nom,
+            1
+          );
         });
       }
     } else if (plateau.cases[train.x][train.y].nom.includes("vers haut")) {
@@ -382,49 +401,83 @@ function avancer(contexte, plateau) {
         train.direction = G;
       } else {
         dehors.push(train);
-        plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+        plateau.cases[train.x][train.y] = new Type_de_case(
+          plateau.cases[train.x][train.y].nom,
+          1
+        );
         train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+          plateau.cases[w.x][w.y] = new Type_de_case(
+            plateau.cases[w.x][w.y].nom,
+            1
+          );
         });
       }
-    } else if (plateau.cases[train.x][train.y].nom.includes("rail haut vers droite")) {
+    } else if (
+      plateau.cases[train.x][train.y].nom.includes("rail haut vers droite")
+    ) {
       if (train.direction === H) {
         train.direction = D;
       } else if (train.direction === G) {
         train.direction = B;
       } else {
         dehors.push(train);
-        plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+        plateau.cases[train.x][train.y] = new Type_de_case(
+          plateau.cases[train.x][train.y].nom,
+          1
+        );
         train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+          plateau.cases[w.x][w.y] = new Type_de_case(
+            plateau.cases[w.x][w.y].nom,
+            1
+          );
         });
       }
     } else if (plateau.cases[train.x][train.y].nom.includes("vertical")) {
       if (train.direction === D || train.direction === G) {
         dehors.push(train);
-        plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+        plateau.cases[train.x][train.y] = new Type_de_case(
+          plateau.cases[train.x][train.y].nom,
+          1
+        );
         train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+          plateau.cases[w.x][w.y] = new Type_de_case(
+            plateau.cases[w.x][w.y].nom,
+            1
+          );
         });
       }
     } else if (plateau.cases[train.x][train.y].nom.includes("horizontal")) {
       if (train.direction === H || train.direction === B) {
         dehors.push(train);
-        plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+        plateau.cases[train.x][train.y] = new Type_de_case(
+          plateau.cases[train.x][train.y].nom,
+          1
+        );
         train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+          plateau.cases[w.x][w.y] = new Type_de_case(
+            plateau.cases[w.x][w.y].nom,
+            1
+          );
         });
       }
-    } else if (plateau.cases[train.x][train.y].nom.includes("rail bas vers droite")) {
+    } else if (
+      plateau.cases[train.x][train.y].nom.includes("rail bas vers droite")
+    ) {
       if (train.direction === B) {
         train.direction = D;
       } else if (train.direction === G) {
         train.direction = H;
       } else {
         dehors.push(train);
-        plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 1);
+        plateau.cases[train.x][train.y] = new Type_de_case(
+          plateau.cases[train.x][train.y].nom,
+          1
+        );
         train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 1);
+          plateau.cases[w.x][w.y] = new Type_de_case(
+            plateau.cases[w.x][w.y].nom,
+            1
+          );
         });
       }
     }
@@ -450,15 +503,20 @@ function avancer(contexte, plateau) {
   }
 }
 
-
-function clearDebris(contexte,plateau){
-	debris.forEach((train)=>{
-		plateau.cases[train.x][train.y] = new Type_de_case(plateau.cases[train.x][train.y].nom, 0);
-        train.wagon.forEach((w) => {
-          plateau.cases[w.x][w.y] = new Type_de_case(plateau.cases[w.x][w.y].nom, 0);
-        });
-	});
-	debris.length=0;
+function clearDebris(contexte, plateau) {
+  debris.forEach((train) => {
+    plateau.cases[train.x][train.y] = new Type_de_case(
+      plateau.cases[train.x][train.y].nom,
+      0
+    );
+    train.wagon.forEach((w) => {
+      plateau.cases[w.x][w.y] = new Type_de_case(
+        plateau.cases[w.x][w.y].nom,
+        0
+      );
+    });
+  });
+  debris.length = 0;
 }
 
 /************************************************************/
@@ -605,34 +663,39 @@ function tchou() {
       console.log(t);
     });
   });
-  
-  	
-  	timerId= setTimeout(avancer, 500, contexte, plateau);
-  	let bp  = document.getElementById("bouton_pause");
-  	bp.addEventListener("click",(e)=>{
-  		if(bp.innerText=="Pause"){
-  			bp.innerText="Redémarrer";
-  			pause=true;
-  			timerId=null;
-  		}else{
-  			bp.innerText="Pause";
-  			pause=false;
-  			timerId= setTimeout(avancer, 500, contexte, plateau);
-  		}
-  	});
-  	  	
-	let bc  = document.getElementById("bouton_clear");
-	bc.addEventListener("click",(e)=>{
-		clearDebris(contexte,plateau);
-	});
 
+  timerId = setTimeout(avancer, 500, contexte, plateau);
+  let bp = document.getElementById("bouton_pause");
+  bp.addEventListener("click", (e) => {
+    if (bp.innerText == "Pause") {
+      bp.innerText = "Redémarrer";
+      pause = true;
+      timerId = null;
+    } else {
+      bp.innerText = "Pause";
+      pause = false;
+      timerId = setTimeout(avancer, 500, contexte, plateau);
+    }
+  });
 
-	
+  let bc = document.getElementById("bouton_clear");
+  bc.addEventListener("click", (e) => {
+    clearDebris(contexte, plateau);
+  });
+
   canvas.addEventListener("click", (e) => {
     if (t != null) {
       console.log(t);
-      let x = Math.floor(e.offsetX / LARGEUR_CASE);
-      let y = Math.floor(e.offsetY / HAUTEUR_CASE);
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+
+      const clickX = (e.clientX - rect.left) * scaleX;
+      const clickY = (e.clientY - rect.top) * scaleY;
+
+      let x = Math.floor(clickX / LARGEUR_CASE);
+      let y = Math.floor(clickY / HAUTEUR_CASE);
+
       //console.log("x="+x+" et y="+y);
       if (!(typeof t === "string")) {
         plateau.cases[x][y] = t;
@@ -659,7 +722,12 @@ window.togglePause = () => {
   if (pause) {
     pause = false;
     bp.innerText = "Pause";
-    timerId = setTimeout(avancer, 500, document.getElementById("simulateur").getContext("2d"), b);
+    timerId = setTimeout(
+      avancer,
+      500,
+      document.getElementById("simulateur").getContext("2d"),
+      b
+    );
   } else {
     pause = true;
     bp.innerText = "Redémarrer";
@@ -667,10 +735,8 @@ window.togglePause = () => {
   }
 };
 
-
 /************************************************************/
 // Programme principal
 /************************************************************/
 // NOTE: rien à modifier ici !
 window.tchou = tchou;
-

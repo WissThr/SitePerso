@@ -1,10 +1,12 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Home from './pages/Home'
-import About from './pages/About.jsx'
-import Projects from './pages/Projects'
-import Contact from './pages/Contact'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import About from "./pages/About.jsx";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Up from "./components/Up";
+import Footer from "./components/Footer.jsx";
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Up />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
