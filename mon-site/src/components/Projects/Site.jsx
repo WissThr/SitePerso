@@ -7,9 +7,10 @@ export default function Site() {
       <h1 style={style.title}>Mon site personnel</h1>
 
       <p style={style.text}>
-        Inspiré par des amis développeurs, j'ai décidé de créer{" "}
-        <strong>mon propre site web</strong> pour me présenter et partager mes
-        projets.
+        Inspiré par des{" "}
+        <a href="https://marina-gonzalezfigueroa.mds-lyon.yt/">amis</a>, j'ai
+        décidé de créer <strong>mon propre site web</strong> pour me présenter
+        et partager mes projets.
       </p>
 
       <p style={style.text}>

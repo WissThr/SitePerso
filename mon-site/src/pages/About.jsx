@@ -37,6 +37,38 @@ function About() {
         </div>
 
         <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="100">
+          <div style={styles.headingWithButton}>
+            <h3 style={styles.tit}>Avant de commencer</h3>
+            <a href="/CV_WTahiri.pdf" download style={styles.cvButton}>
+              📄 Télécharger mon CV
+            </a>
+          </div>
+
+          <p>
+            Actuellement en <strong>deuxième année de cycle ingénieur</strong> (
+            <u>Niveau Bac+4 / Master 1</u>) à l'école Sup Galilée, je suis à la
+            recherche d’un <strong>stage</strong> <u>de 2 à 4 mois</u> ou d’une{" "}
+            <strong>opportunité d’alternance</strong> pour approfondir mes
+            compétences sur le terrain.
+          </p>
+
+          <p>
+            Au fil de mon cursus, j’ai particulièrement apprécié les domaines du{" "}
+            <strong>développement Web</strong>, du{" "}
+            <strong>développement logiciel</strong> ainsi que de l’
+            <strong>administration système</strong>, que j’aimerais explorer
+            davantage dans un contexte professionnel.
+          </p>
+
+          <p>
+            Curieux, rigoureux et motivé, je souhaite intégrer une équipe
+            dynamique où je pourrai <u>mettre en pratique mes acquis</u>,{" "}
+            <u>apprendre de nouvelles technologies</u>
+            {""} et <u>contribuer à des projets concrets</u>.
+          </p>
+        </div>
+
+        <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="200">
           <h3>Ma vision</h3>
           <div style={styles.flexRow}>
             <div style={styles.textCol}>
@@ -58,7 +90,7 @@ function About() {
             <img src={HW} alt="Hello World" style={styles.image} />
           </div>
         </div>
-        <div style={styles.block} data-aos="fade-up" data-aos-delay="200">
+        <div style={styles.block} data-aos="fade-up" data-aos-delay="300">
           <h3>Mon parcours</h3>
           <Timeline events={timeline} h={"Mon parcours résumé"} />
           <p>
@@ -87,38 +119,6 @@ function About() {
             de prépa et en découvrant de nouvelles disciplines :
           </p>
           <BulletPoints points={ing}></BulletPoints>
-        </div>
-
-        <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="300">
-          <div style={styles.headingWithButton}>
-            <h3 style={styles.tit}>Et maintenant ?</h3>
-            <a href="/CV_WTahiri.pdf" download style={styles.cvButton}>
-              📄 Télécharger mon CV
-            </a>
-          </div>
-
-          <p>
-            Actuellement en <strong>deuxième année de cycle ingénieur</strong> (
-            <u>Niveau Bac+4 / Master 1</u>) à l'école Sup Galilée, je suis à la
-            recherche d’un <strong>stage</strong> <u>de 2 à 4 mois</u> ou d’une{" "}
-            <strong>opportunité d’alternance</strong> pour approfondir mes
-            compétences sur le terrain.
-          </p>
-
-          <p>
-            Au fil de mon cursus, j’ai particulièrement apprécié les domaines du{" "}
-            <strong>développement Web</strong>, du{" "}
-            <strong>développement logiciel</strong> ainsi que de l’
-            <strong>administration système</strong>, que j’aimerais explorer
-            davantage dans un contexte professionnel.
-          </p>
-
-          <p>
-            Curieux, rigoureux et motivé, je souhaite intégrer une équipe
-            dynamique où je pourrai <u>mettre en pratique mes acquis</u>,{" "}
-            <u>apprendre de nouvelles technologies</u>
-            {""} et <u>contribuer à des projets concrets</u>.
-          </p>
         </div>
       </div>
     </section>
