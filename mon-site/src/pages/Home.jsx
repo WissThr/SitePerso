@@ -1,14 +1,37 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import HomeImg from "../assets/home.jpg";
 import logo from "../assets/logo.jpg";
+
 function Home() {
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <section style={styles.section}>
-      <div style={styles.content}>
-        <div style={styles.textBlock} data-aos="fade-right">
-          <h1 style={styles.title}>Bienvenue !</h1>
-          <p style={styles.subtitle}>
+      <div
+        style={{
+          ...styles.content,
+          flexDirection: isMobile ? "column" : "row",
+          textAlign: isMobile ? "center" : "left",
+        }}
+      >
+        <div
+          style={{
+            ...styles.textBlock,
+            padding: isMobile ? "1.5rem" : styles.textBlock.padding,
+            width: isMobile ? "100%" : "auto",
+          }}
+          data-aos="fade-right"
+        >
+          <h1 style={{ ...styles.title, fontSize: isMobile ? "2rem" : "3rem" }}>
+            Bienvenue !
+          </h1>
+          <p
+            style={{
+              ...styles.subtitle,
+              fontSize: isMobile ? "1rem" : "1.5rem",
+              lineHeight: "1.6",
+            }}
+          >
             Je suis <strong>Wissam Tahiri</strong>, étudiant en{" "}
             <u>ingénierie informatique</u> passionné par le{" "}
             <strong>développement</strong> et l'<strong>innovation</strong>.
@@ -17,7 +40,12 @@ function Home() {
             abstraites en <u>projets concrets</u>. Explorez mon univers et
             découvrez mes réalisations !
           </p>
-          <div style={styles.buttonGroup}>
+          <div
+            style={{
+              ...styles.buttonGroup,
+              justifyContent: isMobile ? "center" : "flex-start",
+            }}
+          >
             <Link to="/about" style={styles.button}>
               En savoir plus
             </Link>
@@ -26,14 +54,17 @@ function Home() {
             </Link>
           </div>
         </div>
-        <div style={styles.imageBlock} data-aos="fade-left">
-          <img
-            src={logo}
-            alt="Wissam Tahiri - Home"
-            style={styles.image}
-            onContextMenu={(e) => e.preventDefault()}
-          />
-        </div>
+
+        {!isMobile && (
+          <div style={styles.imageBlock} data-aos="fade-left">
+            <img
+              src={logo}
+              alt="Wissam Tahiri - Home"
+              style={styles.image}
+              onContextMenu={(e) => e.preventDefault()}
+            />
+          </div>
+        )}
       </div>
     </section>
   );
@@ -41,72 +72,64 @@ function Home() {
 
 const styles = {
   section: {
-    height: "100svh", // au lieu de minHeight
-    margin: "0",
-    padding: "0 2rem", // padding horizontal uniquement
+    minHeight: "100vh",
+    width: "100%",
+    padding: "2rem 1rem",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    overflow: "hidden", // empêcher du scroll inutile
+    boxSizing: "border-box",
   },
-
   content: {
     display: "flex",
-    flexWrap: "wrap",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: "3rem",
-    width: "90%",
-    maxWidth: "1200px",
+    gap: "2rem",
+    width: "100%",
+    maxWidth: "1100px",
   },
   textBlock: {
     flex: 1,
-    minWidth: "280px",
-    backgroundColor: " #F9F7F7",
+    backgroundColor: "#F9F7F7",
     borderRadius: "5%",
     padding: "2rem",
   },
   title: {
-    fontSize: "3rem",
     fontWeight: "700",
     color: "#112D4E",
     marginBottom: "1rem",
   },
   subtitle: {
-    fontSize: "1.5rem",
     marginBottom: "1.5rem",
     color: "#3F72AF",
   },
   buttonGroup: {
     marginTop: "2rem",
     display: "flex",
-    gap: "1.5rem",
     flexWrap: "wrap",
+    gap: "1rem",
   },
   button: {
-    padding: "0.8rem 1.6rem",
+    padding: "0.7rem 1.4rem",
     backgroundColor: "#3F72AF",
     color: "#fff",
     textDecoration: "none",
     borderRadius: "8px",
     fontWeight: "bold",
-    fontSize: "1.2rem",
-    transition: "background-color 0.3s ease",
+    fontSize: "1rem",
   },
   buttonAlt: {
-    padding: "0.8rem 1.6rem",
+    padding: "0.7rem 1.4rem",
     backgroundColor: "#112D4E",
     color: "#fff",
     textDecoration: "none",
     borderRadius: "8px",
     fontWeight: "bold",
-    fontSize: "1.2rem",
-    transition: "background-color 0.3s ease",
+    fontSize: "1rem",
   },
   imageBlock: {
     flex: 1,
     textAlign: "center",
-    minWidth: "280px",
   },
   image: {
     width: "100%",

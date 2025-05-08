@@ -18,23 +18,25 @@ const imageMap = {
 };
 
 export default function Timeline({ events, h }) {
+  const isMobile = window.innerWidth <= 768;
+
   const settings = {
     dots: true,
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // valeur par défaut
+    slidesToShow: 3,
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 1024, // tablettes ou petits laptops
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 768, // mobiles
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -52,6 +54,16 @@ export default function Timeline({ events, h }) {
           {`
             .slick-prev, .slick-next {
               z-index: 10;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+
+            .slick-prev {
+              left: -35px;
+            }
+
+            .slick-next {
+              right: -25px;
             }
 
             .slick-prev:before,
@@ -59,13 +71,34 @@ export default function Timeline({ events, h }) {
               color: black;
               font-size: 30px;
             }
-          `}
+
+            @media (hover: hover) {
+              .timeline-btn:hover {
+                background-color: #365f94;
+              }
+            }
+
+            * {
+                -webkit-tap-highlight-color: transparent;
+              }
+
+            .timeline-card {
+              user-select: none;
+              -webkit-user-select: none;
+              -webkit-touch-callout: none;
+              touch-action: pan-y;
+            }
+                
+            .timeline-card:active {
+              transform: none !important;
+            }
+      `}
         </style>
 
         <Slider {...settings}>
           {events.map((event, index) => (
             <div key={index} style={styles.cardWrapper}>
-              <div style={styles.card}>
+              <div className="timeline-card" style={styles.card}>
                 <div style={styles.icon}>
                   {imageMap[event.icon] ? (
                     <img
@@ -79,22 +112,36 @@ export default function Timeline({ events, h }) {
                       }}
                     />
                   ) : (
-                    event.icon
+                    <span style={{ fontSize: isMobile ? "2.5rem" : "3rem" }}>
+                      {event.icon}
+                    </span>
                   )}
                 </div>
 
                 <div style={styles.year}>{event.year}</div>
-                <h4 style={styles.cardTitle}>{event.title}</h4>
-                <p style={styles.cardDesc}>{event.desc}</p>
+                <h4
+                  style={{
+                    ...styles.cardTitle,
+                    fontSize: isMobile ? "1.3rem" : "2rem",
+                  }}
+                >
+                  {event.title}
+                </h4>
+                <p
+                  style={{
+                    ...styles.cardDesc,
+                    fontSize: isMobile ? "1rem" : "1.5rem",
+                  }}
+                >
+                  {event.desc}
+                </p>
 
                 {event.key && (
                   <button
-                    style={styles.button}
-                    onClick={() => {
-                      const section = document.getElementById(event.key);
-                      if (section) {
-                        section.scrollIntoView({ behavior: "smooth" });
-                      }
+                    className="timeline-btn"
+                    style={{
+                      ...styles.button,
+                      fontSize: isMobile ? "1.1rem" : "2rem",
                     }}
                   >
                     Voir le projet
@@ -126,12 +173,10 @@ const styles = {
     margin: "0 auto",
     padding: "0 1rem",
   },
-
   cardWrapper: {
     padding: "0",
     boxSizing: "border-box",
   },
-
   card: {
     backgroundColor: "#DBE2EF",
     borderRadius: "12px",
@@ -142,7 +187,6 @@ const styles = {
     minHeight: "400px",
     margin: "0 10px",
   },
-
   icon: {
     fontSize: "3rem",
     marginBottom: "0.5rem",
@@ -154,13 +198,11 @@ const styles = {
     marginBottom: "0.3rem",
   },
   cardTitle: {
-    fontSize: "2rem",
     fontWeight: "600",
     marginBottom: "0.5rem",
     color: "#112D4E",
   },
   cardDesc: {
-    fontSize: "1.5rem",
     color: "black",
   },
   button: {
@@ -171,7 +213,5 @@ const styles = {
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
-    fontSize: "2rem",
-    bottom: "0",
   },
 };

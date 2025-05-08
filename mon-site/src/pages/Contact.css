@@ -1,17 +1,18 @@
 .link-card {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background-color: #0056b3;
-    padding: 0.8rem 1.2rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-    font-size: 1rem;
-    font-weight: 500;
-    color: #f0f0f0f0;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-  }
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #0056b3;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-size: clamp(0.85rem, 2.5vw, 1rem); /* ← nouvelle ligne */
+  font-weight: 500;
+  color: #f0f0f0f0;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
   
   .link-card:hover {
     background-color: #f0f0f0;

@@ -1,0 +1,15 @@
+[
+  { "name": "HTML", "icon": "html" },
+  { "name": "CSS", "icon": "css" },
+  { "name": "JavaScript", "icon": "js" },
+  { "name": "ReactJS", "icon": "react" },
+  { "name": "Java", "icon": "java" },
+  { "name": "C", "icon": "c" },
+  { "name": "C++", "icon": "cpp" },
+  { "name": "Python", "icon": "python" },
+  { "name": "Kotlin", "icon": "kotlin" },
+  { "name": "SQL", "icon": "sql" },
+  { "name": "OCaml", "icon": "ocaml" },
+  { "name": "Matlab", "icon": "matlab" },
+  { "name": "Et d'autres...", "icon": "..." }
+]

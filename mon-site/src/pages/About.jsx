@@ -6,16 +6,17 @@ import BulletPoints from "../components/BulletPoints";
 import cp2i from "../constants/cp2i.json";
 import ing from "../constants/ing.json";
 import timeline from "../constants/timeline.json";
+import "../styles/About.css";
 
 function About() {
   return (
-    <section style={styles.section}>
-      <h2 style={styles.title}>À propos de moi</h2>
-      <div style={styles.content}>
-        <div style={styles.block} data-aos="fade-up">
+    <section className="about-section">
+      <h2 className="about-title">À propos de moi</h2>
+      <div className="about-content">
+        <div className="about-block" data-aos="fade-up">
           <h3>Qui suis-je ?</h3>
-          <div style={styles.flexRow}>
-            <div style={styles.textCol}>
+          <div className="flex-row">
+            <div className="text-col">
               <p>
                 Je m'appelle <strong>Wissam Tahiri</strong>,{" "}
                 <u>étudiant en ingénieurie informatique</u> au sein de l'école
@@ -30,16 +31,20 @@ function About() {
             <img
               src={Wiss}
               alt="Wissam Tahiri"
-              style={styles.image}
+              className="about-image"
               onContextMenu={(e) => e.preventDefault()}
             />
           </div>
         </div>
 
-        <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="100">
-          <div style={styles.headingWithButton}>
-            <h3 style={styles.tit}>Avant de commencer</h3>
-            <a href="/CV_WTahiri.pdf" download style={styles.cvButton}>
+        <div
+          className="about-block-alt"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div className="heading-with-button">
+            <h3>Avant de commencer</h3>
+            <a href="/CV_WTahiri.pdf" download className="cv-button">
               📄 Télécharger mon CV
             </a>
           </div>
@@ -63,15 +68,19 @@ function About() {
           <p>
             Curieux, rigoureux et motivé, je souhaite intégrer une équipe
             dynamique où je pourrai <u>mettre en pratique mes acquis</u>,{" "}
-            <u>apprendre de nouvelles technologies</u>
-            {""} et <u>contribuer à des projets concrets</u>.
+            <u>apprendre de nouvelles technologies</u> et{" "}
+            <u>contribuer à des projets concrets</u>.
           </p>
         </div>
 
-        <div style={styles.blockAlt} data-aos="fade-up" data-aos-delay="200">
+        <div
+          className="about-block-alt"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <h3>Ma vision</h3>
-          <div style={styles.flexRow}>
-            <div style={styles.textCol}>
+          <div className="flex-row">
+            <div className="text-col">
               <p>
                 J’aime <strong>comprendre</strong> comment fonctionnent les
                 choses et <u>explorer</u> les mécanismes qui les animent. <br />
@@ -87,10 +96,11 @@ function About() {
                 découvrant les <strong>technologies</strong> qui y sont liées.
               </p>
             </div>
-            <img src={HW} alt="Hello World" style={styles.image} />
+            <img src={HW} alt="Hello World" className="about-image" />
           </div>
         </div>
-        <div style={styles.block} data-aos="fade-up" data-aos-delay="300">
+
+        <div className="about-block" data-aos="fade-up" data-aos-delay="300">
           <h3>Mon parcours</h3>
           <Timeline events={timeline} h={"Mon parcours résumé"} />
           <p>
@@ -118,96 +128,11 @@ function About() {
             J’ai validé ma première année avec succès, en consolidant mes acquis
             de prépa et en découvrant de nouvelles disciplines :
           </p>
-          <BulletPoints points={ing}></BulletPoints>
+          <BulletPoints points={ing} />
         </div>
       </div>
     </section>
   );
 }
-
-const styles = {
-  section: {
-    padding: "4rem 2rem",
-    minHeight: "100vh",
-    margin: "2rem auto",
-    width: "90%",
-    boxSizing: "border-box",
-  },
-  title: {
-    textAlign: "center",
-    fontSize: "3.5rem",
-    marginBottom: "3rem",
-    fontWeight: "700",
-    color: "#F9F7F7",
-    position: "relative",
-  },
-  content: {
-    fontSize: "1.5rem",
-    lineHeight: "1.8",
-    color: "#333",
-  },
-  block: {
-    padding: "2.5rem",
-    backgroundColor: "#F9F7F7",
-    borderRadius: "10px",
-    margin: "2rem auto",
-    width: "90%",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-  },
-  blockAlt: {
-    padding: "2.5rem",
-    backgroundColor: "#F9F7F7",
-    borderRadius: "10px",
-    margin: "2rem auto",
-    width: "90%",
-    boxShadow: "0 4px 12px rgba(0,0,0,0.05)",
-  },
-  flexRow: {
-    display: "flex",
-    alignItems: "flex-start",
-    justifyContent: "space-between",
-    gap: "3rem",
-    flexWrap: "wrap",
-    marginTop: "1rem",
-  },
-  textCol: {
-    flex: 1,
-    minWidth: "250px",
-  },
-  image: {
-    height: "350px", // MODIFICATION : pour être plus responsive
-    maxWidth: "450px", // MODIFICATION : limite la largeur max de l'image
-    objectFit: "cover",
-    borderRadius: "8px",
-    flex: 2,
-  },
-  headingWithButton: {
-    paddingTop: "1rem",
-    paddingRight: "10px",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexWrap: "wrap",
-    gap: "1rem",
-    marginBottom: "1rem",
-  },
-  h3: {
-    fontSize: "1.4rem",
-    fontWeight: "600",
-    color: "#112D4E",
-    margin: 0,
-  },
-  cvButton: {
-    padding: "0.6rem 1.2rem",
-    backgroundColor: "#3F72AF",
-    color: "#fff",
-    textDecoration: "none",
-    borderRadius: "8px",
-    fontWeight: "bold",
-    fontSize: "2rem",
-    transition: "background-color 0.3s ease",
-    whiteSpace: "nowrap",
-  },
-};
 
 export default About;

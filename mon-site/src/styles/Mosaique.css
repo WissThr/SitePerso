@@ -1,0 +1,11 @@
+.skill-item:hover img,
+.skill-item:hover span {
+  transform: scale(1.15);
+}
+
+  div[style*="box-shadow"]:hover {
+    transform: scale(1.07);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  

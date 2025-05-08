@@ -1,0 +1,129 @@
+/* About.css */
+
+.about-section {
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .about-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    color: #F9F7F7;
+  }
+  
+  .about-block,
+  .about-block-alt {
+    padding: 2.5rem;
+    background-color: #F9F7F7;
+    color: #333;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .flex-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .text-col {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .about-image {
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .heading-with-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cv-button {
+    padding: 0.6rem 1.2rem;
+    background-color: #3F72AF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+  
+/* Texte plus grand sur desktop */
+@media (min-width: 769px) {
+    .about-block p,
+    .about-block-alt p,
+    .text-col p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #333;
+    }
+  }
+  
+
+  /* === Responsive Mobile Styles === */
+  @media (max-width: 768px) {
+    .about-section {
+      padding: 2rem 1rem;
+    }
+  
+    .about-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .about-block,
+    .about-block-alt {
+      padding: 1.5rem;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+  
+    .flex-row {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .about-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .text-col p {
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .cv-button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-align: center;
+      }
+      
+  }
+  

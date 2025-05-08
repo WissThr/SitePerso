@@ -1,44 +1,73 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const desktop = window.innerWidth >= 768;
+      setIsDesktop(desktop);
+      if (desktop) setMenuOpen(false);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header style={styles.header}>
-      <h1 style={styles.title}>Wissam Tahiri</h1>
-      <nav>
-        <NavLink
-          to="/"
-          style={({ isActive }) =>
-            isActive ? { ...styles.link, ...styles.activeLink } : styles.link
-          }
+      <div style={styles.topBar}>
+        <h1
+          style={{
+            ...styles.title,
+            textAlign: isDesktop ? "center" : "left",
+            flex: 1,
+          }}
         >
-          Accueil
-        </NavLink>
-        <NavLink
-          to="/about"
-          style={({ isActive }) =>
-            isActive ? { ...styles.link, ...styles.activeLink } : styles.link
-          }
+          Wissam Tahiri
+        </h1>
+
+        {!isDesktop && (
+          <button onClick={() => setMenuOpen(!menuOpen)} style={styles.burger}>
+            ☰
+          </button>
+        )}
+      </div>
+
+      {/* Nav visible si desktop OU menu mobile ouvert */}
+      {(isDesktop || menuOpen) && (
+        <nav
+          style={{ ...styles.nav, flexDirection: isDesktop ? "row" : "column" }}
         >
-          À propos
-        </NavLink>
-        <NavLink
-          to="/projects"
-          style={({ isActive }) =>
-            isActive ? { ...styles.link, ...styles.activeLink } : styles.link
-          }
-        >
-          Projets
-        </NavLink>
-        <NavLink
-          to="/contact"
-          style={({ isActive }) =>
-            isActive ? { ...styles.link, ...styles.activeLink } : styles.link
-          }
-        >
-          Contact
-        </NavLink>
-      </nav>
+          {["/", "/about", "/projects", "/contact", "/skills"].map(
+            (path, idx) => {
+              const labels = [
+                "Accueil",
+                "À propos",
+                "Projets",
+                "Contact",
+                "Compétences",
+              ];
+              return (
+                <NavLink
+                  key={path}
+                  to={path}
+                  onClick={() => setMenuOpen(false)}
+                  style={({ isActive }) =>
+                    isActive
+                      ? { ...styles.link, ...styles.activeLink }
+                      : styles.link
+                  }
+                >
+                  {labels[idx]}
+                </NavLink>
+              );
+            }
+          )}
+        </nav>
+      )}
     </header>
   );
 }
@@ -50,41 +79,56 @@ const styles = {
     zIndex: 1000,
     backgroundColor: "#112D4E",
     padding: "1rem 2rem",
+    width: "100vw",
+    boxSizing: "border-box",
     display: "flex",
+    flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
     color: "white",
-    flexWrap: "wrap", // AJOUT pour que ça s'adapte
   },
+
   title: {
     margin: 0,
-    fontSize: "3rem", // DIMINUÉ
+    fontSize: "2rem",
+    flex: "1 0 100%",
+    textAlign: "center",
     fontFamily: "Protest Riot, sans-serif",
-    fontWeight: "400",
-    fontStyle: "normal",
-    flex: "1 0 100%", // le titre prend toute la largeur sur petit écran
-    textAlign: "center", // centré si mobile
+  },
+  burger: {
+    background: "none",
+    border: "none",
+    color: "white",
+    fontSize: "2rem",
+    cursor: "pointer",
+    position: "absolute",
+    right: "2rem",
   },
   nav: {
+    flex: "1 0 100%",
     display: "flex",
-    justifyContent: "center",
     alignItems: "center",
-    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "1rem",
+    marginTop: "1rem",
   },
   link: {
     color: "white",
-    fontSize: "1.5rem",
-    marginLeft: "2rem",
+    fontSize: "1.2rem",
     textDecoration: "none",
-    display: "inline-block",
-    marginTop: "1rem",
-    padding: "0.5rem 1rem", // pour mieux voir l'effet
+    padding: "0.5rem 1rem",
     borderRadius: "8px",
     transition: "background-color 0.3s ease",
   },
   activeLink: {
     backgroundColor: "#3F72AF",
     fontWeight: "bold",
+  },
+  topBar: {
+    display: "flex",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
 };
 

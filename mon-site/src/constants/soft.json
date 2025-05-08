@@ -1,0 +1,10 @@
+[
+  { "name": "Travail en équipe", "icon": "🤝" },
+  { "name": "Communication", "icon": "🗣️" },
+  { "name": "Résolution de problèmes", "icon": "🧠" },
+  { "name": "Curiosité", "icon": "🔍" },
+  { "name": "Adaptabilité", "icon": "🔄" },
+  { "name": "Créativité", "icon": "🎨" },
+  { "name": "Autonomie", "icon": "🧍‍♂️" },
+  { "name": "Empathie", "icon": "❤️" }
+]

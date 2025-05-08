@@ -5,7 +5,7 @@ export default function Footer() {
         textAlign: "center",
         padding: "1rem",
         fontSize: "1rem",
-        color: "#aaa",
+        color: "#333",
       }}
     >
       © 2025 Wissam Tahiri. Tous droits réservés.

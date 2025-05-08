@@ -1,3 +1,5 @@
+import "../styles/BulletPoints.css";
+
 export default function BulletPoints({ points }) {
   return (
     <ul>
