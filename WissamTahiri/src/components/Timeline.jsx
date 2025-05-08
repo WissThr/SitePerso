@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import simon from "../assets/simon.png";
 import amazon from "../assets/amazon.svg";
 import conway from "../assets/conway.gif";
-import covoit from "../assets/covoit.png";
+import covoit from "../assets/Covoit.png";
 import VV155 from "../assets/VV155.png";
 
 const imageMap = {
