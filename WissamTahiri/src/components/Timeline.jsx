@@ -143,6 +143,12 @@ export default function Timeline({ events, h }) {
                       ...styles.button,
                       fontSize: isMobile ? "1.1rem" : "2rem",
                     }}
+                    onClick={() => {
+                      const section = document.getElementById(event.key);
+                      if (section) {
+                        section.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                   >
                     Voir le projet
                   </button>
