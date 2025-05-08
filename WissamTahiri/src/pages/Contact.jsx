@@ -8,7 +8,7 @@ import Gmail from "../assets/gmail.svg";
 const service = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const template = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-const captchaKey = import.meta.env.VITE_RECAPTCHA_KEY;
+const captchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 function Contact() {
   const formRef = useRef();
