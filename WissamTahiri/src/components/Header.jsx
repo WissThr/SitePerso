@@ -9,7 +9,9 @@ function Header() {
     const handleResize = () => {
       const desktop = window.innerWidth >= 768;
       setIsDesktop(desktop);
-      if (desktop) setMenuOpen(false);
+      if (desktop) {
+        setMenuOpen(false);
+      }
     };
 
     window.addEventListener("resize", handleResize);
@@ -41,14 +43,14 @@ function Header() {
         <nav
           style={{ ...styles.nav, flexDirection: isDesktop ? "row" : "column" }}
         >
-          {["/", "/about", "/projects", "/contact", "/skills"].map(
+          {["/", "/about", "/projects", "/skills", "/contact"].map(
             (path, idx) => {
               const labels = [
                 "Accueil",
                 "À propos",
                 "Projets",
-                "Contact",
                 "Compétences",
+                "Contact",
               ];
               return (
                 <NavLink
