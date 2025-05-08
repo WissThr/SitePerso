@@ -5,11 +5,14 @@ import "./Contact.css";
 import GH from "../assets/tools/github.svg";
 import Gmail from "../assets/gmail.svg";
 
+const service = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const template = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const captchaKey = import.meta.env.VITE_RECAPTCHA_KEY;
+
 function Contact() {
   const formRef = useRef();
   const recaptchaRef = useRef();
-  //const isMobile = window.innerWidth <= 768;
-
   const sendEmail = (e) => {
     e.preventDefault();
     const token = recaptchaRef.current.getValue();
@@ -20,12 +23,7 @@ function Contact() {
     }
 
     emailjs
-      .sendForm(
-        "service_ydjxo6d",
-        "template_xke6cfg",
-        formRef.current,
-        "rLCVzmHiV5qBXoOj-"
-      )
+      .sendForm(service, template, formRef.current, publicKey)
       .then(() => {
         alert("Message envoyé !");
         formRef.current.reset();
@@ -92,7 +90,7 @@ function Contact() {
         />
         <ReCAPTCHA
           ref={recaptchaRef}
-          sitekey="6LespB4rAAAAAIsJvZGo0Jpa4KnwRoOqnTuitiXh"
+          sitekey={captchaKey}
           style={styles.captcha}
         />
         <button type="submit" style={styles.button}>
