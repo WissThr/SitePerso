@@ -221,7 +221,7 @@ function dessine_case(contexte, plateau, x, y) {
 
   // NOTE: à améliorer
 
-  let image_a_afficher = image_of_case(la_case);
+  const image_a_afficher = image_of_case(la_case);
   // Affiche l'image concernée
   contexte.drawImage(
     image_a_afficher,
@@ -639,7 +639,7 @@ function tchou() {
   /*------------------------------------------------------------*/
   // Variables DOM
   /*------------------------------------------------------------*/
-  let canvas = document.getElementById("simulateur");
+  const canvas = document.getElementById("simulateur");
   const contexte = document.getElementById("simulateur").getContext("2d");
   const d = document.getElementById("boutons");
   const ba = d.querySelectorAll("input[type=image]");
@@ -647,8 +647,9 @@ function tchou() {
   // NOTE: ce qui suit est sûrement à compléter voire à réécrire intégralement
 
   // Création du plateau
-  let plateau = new Plateau();
+  const plateau = new Plateau();
   cree_plateau_initial(plateau);
+  b = plateau;
 
   // Dessine le plateau
   dessine_plateau(contexte, plateau);
@@ -657,7 +658,9 @@ function tchou() {
   ba.forEach((i) => {
     i.addEventListener("click", () => {
       i.disabled = true;
-      if (prec != null) prec.disabled = false;
+      if (prec != null) {
+        prec.disabled = false;
+      }
       prec = i;
       t = tdc(prec);
       console.log(t);
@@ -665,7 +668,7 @@ function tchou() {
   });
 
   timerId = setTimeout(avancer, 500, contexte, plateau);
-  let bp = document.getElementById("bouton_pause");
+  const bp = document.getElementById("bouton_pause");
   bp.addEventListener("click", (e) => {
     if (bp.innerText == "Pause") {
       bp.innerText = "Redémarrer";
