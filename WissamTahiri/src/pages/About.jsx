@@ -1,6 +1,6 @@
 import React from "react";
 import Timeline from "../components/Timeline";
-import Wiss from "../assets/Wiss.png";
+import Wiss from "../assets/Wiss.jpg";
 import HW from "../assets/hello-world.gif";
 import BulletPoints from "../components/BulletPoints";
 import cp2i from "../constants/cp2i.json";
@@ -18,8 +18,8 @@ function About() {
           <div className="flex-row">
             <div className="text-col">
               <p>
-                Je m'appelle <strong>Wissam Tahiri</strong>,{" "}
-                <u>étudiant en ingénieurie informatique</u> au sein de l'école
+                Je me présente : <strong>Wissam Tahiri</strong>,{" "}
+                <u>étudiant en ingénierie informatique</u> au sein de l'école
                 d'ingénieurs <strong>Sup Galilée</strong>. <br />
                 Passionné par le développement sous toutes ses formes, je suis
                 également fasciné par le potentiel de l’

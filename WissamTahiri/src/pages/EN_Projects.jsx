@@ -1,13 +1,13 @@
 import React from "react";
 import Timeline from "../components/Timeline";
-import projects from "../constants/projects.json";
-import Simon from "../components/Projects/Simon";
-import BN from "../components/Projects/BN";
-import TrainSimulator from "../components/Projects/TrainSimulator";
-import JDV from "../components/Projects/JDV";
-import VV155 from "../components/Projects/VV155";
-import Covoit from "../components/Projects/Covoit";
-import Site from "../components/Projects/Site";
+import projects from "../constants/EN_projects.json";
+import Simon from "../components/EN_Projects/Simon";
+import BN from "../components/EN_Projects/BN";
+import TrainSimulator from "../components/EN_Projects/TrainSimulator";
+import JDV from "../components/EN_Projects/JDV";
+import VV155 from "../components/EN_Projects/VV155";
+import Covoit from "../components/EN_Projects/Covoit";
+import Site from "../components/EN_Projects/Site";
 import { projectBlockStyle } from "../styles/styleConfig";
 
 function Projects() {
@@ -24,17 +24,13 @@ function Projects() {
           color: "#F9F7F7",
         }}
       >
-        Mes Projets
+        My Projects
       </h2>
 
       <div style={projectBlockStyle.container}>
         <Timeline
           events={projects}
-          h={
-            <p style={projectBlockStyle.title}>
-              Aperçu de mes projets
-            </p>
-          }
+          h={<p style={projectBlockStyle.title}>Quick look at my projects</p>}
         />
       </div>
 

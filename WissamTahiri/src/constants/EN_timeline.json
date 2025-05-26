@@ -1,0 +1,32 @@
+[
+  {
+    "year": "2020",
+    "title": "Scientific Baccalaureate",
+    "desc": "Honors – L'Espérance High School, Aulnay-sous-Bois",
+    "icon": "🎓"
+  },
+  {
+    "year": "2020–2021",
+    "title": "Medical School Entrance Exam",
+    "desc": "1st year in PASS – Université Paris Cité",
+    "icon": "💊"
+  },
+  {
+    "year": "2021–2023",
+    "title": "Integrated Preparatory Program",
+    "desc": "CP2I – Institut Galilée",
+    "icon": "📘"
+  },
+  {
+    "year": "2023–2024",
+    "title": "Engineering Cycle – Year 1",
+    "desc": "Strong foundation in computer science – Sup Galilée",
+    "icon": "💻"
+  },
+  {
+    "year": "2024–2025",
+    "title": "Engineering Cycle – Year 2",
+    "desc": "Theory, Development, AI, Systems",
+    "icon": "⚙️"
+  }
+]

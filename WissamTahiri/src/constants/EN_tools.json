@@ -1,0 +1,14 @@
+[
+  { "name": "Eclipse", "icon": "eclipse" },
+  { "name": "Visual Studio Code", "icon": "vscode" },
+  { "name": "Pycharm", "icon": "pycharm" },
+  { "name": "GitHub", "icon": "github" },
+  { "name": "Suite Office", "icon": "office" },
+  { "name": "Suite Google", "icon": "google" },
+  { "name": "Canva", "icon": "canva" },
+  { "name": "Linux", "icon": "linux" },
+  { "name": "Windows", "icon": "windows" },
+  { "name": "Android Studio", "icon": "android" },
+  { "name": "Photoshop", "icon": "photoshop" },
+  { "name": "And others...", "icon": "..." }
+]

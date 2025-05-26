@@ -36,8 +36,7 @@ export default function Site() {
       </p>
 
       <p style={style.text}>
-        Grâce à des forums et à l'aide d'outils comme Chat GPT ou Copilot
-        ChatGPT, j'ai pu approfondir mes compétences et réaliser un site qui{" "}
+        Grâce à des <strong>forums</strong> et à l'aide <strong>d'outils modernes</strong>, j'ai pu approfondir mes compétences et réaliser un site qui{" "}
         <u>me ressemble</u>.
       </p>
 

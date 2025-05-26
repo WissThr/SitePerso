@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Maths",
+    "description": "Algèbra, Analyse, Probability, Statistics"
+  },
+  {
+    "title": "IT",
+    "description": "Algorithmic et Complexity, Coding in C, Heuristics"
+  },
+  {
+    "title": "Physics",
+    "description": "Particle Mechanics, Electromagnetism, Optics"
+  },
+  {
+    "title": "Chemestry",
+    "description": "Thermodynamics, Organic Chemestry, Reactions"
+  },
+  {
+    "title": "English",
+    "description": "Reading, Listening, Speaking and TOEIC preparation"
+  },
+  {
+    "title": "Engineering Culture",
+    "description": "Techniques of expression and communication, scientific culture and ethics"
+  }
+]

@@ -1,8 +1,14 @@
+/* eslint-disable no-magic-numbers */
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+import frFlag from "../assets/fr.svg";
+import enFlag from "../assets/gb.svg";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isEn, setIsEn] = useState(window.location.pathname.startsWith("/en"));
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
@@ -38,36 +44,57 @@ function Header() {
         )}
       </div>
 
-      {/* Nav visible si desktop OU menu mobile ouvert */}
       {(isDesktop || menuOpen) && (
         <nav
           style={{ ...styles.nav, flexDirection: isDesktop ? "row" : "column" }}
         >
-          {["/", "/about", "/projects", "/skills", "/contact"].map(
-            (path, idx) => {
-              const labels = [
-                "Accueil",
-                "À propos",
-                "Projets",
-                "Compétences",
-                "Contact",
-              ];
-              return (
-                <NavLink
-                  key={path}
-                  to={path}
-                  onClick={() => setMenuOpen(false)}
-                  style={({ isActive }) =>
-                    isActive
-                      ? { ...styles.link, ...styles.activeLink }
-                      : styles.link
-                  }
-                >
-                  {labels[idx]}
-                </NavLink>
-              );
-            }
-          )}
+          {["", "about", "projects", "skills", "contact"].map((slug, idx) => {
+            const labels = isEn
+              ? ["Home", "About", "Projects", "Skills", "Contact"]
+              : ["Accueil", "À propos", "Projets", "Compétences", "Contact"];
+
+            const path = `/${isEn ? "en/" : ""}${slug}`;
+
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                onClick={() => setMenuOpen(false)}
+                end={slug === ""}
+                style={({ isActive }) =>
+                  isActive
+                    ? { ...styles.link, ...styles.activeLink }
+                    : styles.link
+                }
+              >
+                {labels[idx]}
+              </NavLink>
+            );
+          })}
+
+          <div
+            style={{
+              display: "flex",
+              gap: "1rem",
+              alignItems: "center",
+            }}
+          >
+            <Link to="/" onClick={() => setIsEn(false)}>
+              <img
+                src={frFlag}
+                alt="Français"
+                style={{ width: "24px", height: "auto", borderRadius: "20%" }}
+              />
+            </Link>
+            |
+            <Link to="/en/" onClick={() => setIsEn(true)}>
+              <img
+                src={enFlag}
+                alt="English"
+                style={{ width: "24px", height: "auto", borderRadius: "20%" }}
+              />
+            </Link>
+          </div>
         </nav>
       )}
     </header>
@@ -95,7 +122,9 @@ const styles = {
     fontSize: "2rem",
     flex: "1 0 100%",
     textAlign: "center",
-    fontFamily: "Protest Riot, sans-serif",
+    fontFamily: "Montserrat, sans-serif",
+    fontWeight: "bold",
+    fontStyle: "italic",
   },
   burger: {
     background: "none",

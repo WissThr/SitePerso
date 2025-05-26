@@ -1,0 +1,81 @@
+[
+  {
+    "year": "2022",
+    "title": "Ball Game",
+    "desc": "Math and physics applied to programming in C. Done during the first year of prep school.",
+    "icon": "⚽"
+  },
+  {
+    "year": "2022",
+    "title": "Simon Game",
+    "desc": "First real program written in C.",
+    "icon": "simon",
+    "key": "simon"
+  },
+  {
+    "year": "2023",
+    "title": "Battleship Game",
+    "desc": "Used GTK and external code for the first time.",
+    "icon": "🚢",
+    "key": "naval"
+  },
+  {
+    "year": "2023",
+    "title": "Travelling Salesman",
+    "desc": "Still in C, explored different heuristic methods.",
+    "icon": "amazon"
+  },
+  {
+    "year": "2024",
+    "title": "Train Simulator",
+    "desc": "Train simulation game made with JavaScript.",
+    "icon": "🚂",
+    "key": "train"
+  },
+  {
+    "year": "2024",
+    "title": "N-Dimensional Game of Life",
+    "desc": "Game of Life extended to N dimensions using Java.",
+    "icon": "conway",
+    "key": "conway"
+  },
+  {
+    "year": "2024",
+    "title": "Connect Four with AI",
+    "desc": "Connect Four game in C with an AI that anticipates 7 moves ahead. Learned the use of stdint library and data structures.",
+    "icon": "🟡 🔴"
+  },
+  {
+    "year": "2024",
+    "title": "Mobile Cookie Clicker",
+    "desc": "Incremental game to explore Kotlin and mobile app development.",
+    "icon": "🍪"
+  },
+  {
+    "year": "2025",
+    "title": "Association Website",
+    "desc": "Sports association management website with Maven, REST API, Hibernate database, and member/club management.",
+    "icon": "⚙️"
+  },
+  {
+    "year": "2025",
+    "title": "VV155",
+    "desc": "Python-based bot that responds to commands and automates various actions.",
+    "icon": "VV155",
+    "key": "VV155"
+  },
+  {
+    "year": "2025",
+    "title": "CoVoitUniv",
+    "desc": "Carpooling website for USPN staff. Built with ReactJS, Python (Flask), REST API, and SQLAlchemy.",
+    "icon": "covoit",
+    "key": "covoit"
+  },
+  {
+    "year": "2025",
+    "title": "This Website",
+    "desc": "Personal portfolio built with ReactJS to enhance and complement my résumé.",
+    "icon": "💻",
+    "key": "site"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  { "name": "Teamwork", "icon": "🤝" },
+  { "name": "Communication", "icon": "🗣️" },
+  { "name": "Problem Solving", "icon": "🧠" },
+  { "name": "Curiosity", "icon": "🔍" },
+  { "name": "Adaptability", "icon": "🔄" },
+  { "name": "Creativity", "icon": "🎨" },
+  { "name": "Autonomy", "icon": "🧍‍♂️" },
+  { "name": "Empathy", "icon": "❤️" }
+]
