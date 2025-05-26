@@ -65,14 +65,14 @@ function Contact() {
         <input
           type="text"
           name="user_name"
-          placeholder="Votre nom"
+          placeholder="Your name"
           required
           style={styles.input}
         />
         <input
           type="email"
           name="user_email"
-          placeholder="Votre email"
+          placeholder="Your email"
           required
           style={styles.input}
         />
@@ -85,7 +85,7 @@ function Contact() {
         />
         <textarea
           name="message"
-          placeholder="Votre message"
+          placeholder="Message"
           required
           style={styles.textarea}
         />
