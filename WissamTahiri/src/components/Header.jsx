@@ -119,12 +119,15 @@ const styles = {
 
   title: {
     margin: 0,
-    fontSize: "2rem",
-    flex: "1 0 100%",
-    textAlign: "center",
+    fontSize: "1.5rem",
+    flex: 1,
+    textAlign: "left",
     fontFamily: "Montserrat, sans-serif",
     fontWeight: "bold",
     fontStyle: "italic",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
   },
   burger: {
     background: "none",
@@ -132,9 +135,8 @@ const styles = {
     color: "white",
     fontSize: "2rem",
     cursor: "pointer",
-    position: "absolute",
-    right: "2rem",
   },
+
   nav: {
     flex: "1 0 100%",
     display: "flex",
@@ -160,6 +162,7 @@ const styles = {
     width: "100%",
     alignItems: "center",
     justifyContent: "space-between",
+    gap: "1rem",
   },
 };
 
