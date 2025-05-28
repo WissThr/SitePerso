@@ -32,7 +32,7 @@ function Home() {
               lineHeight: "1.6",
             }}
           >
-            I'm <strong>Wissam Tahiri</strong>, an{" "}
+            I'm <strong>Wissam Tahiri</strong>, a{" "}
             <u>Computer Science Engineering Student</u> driven by a passion for{" "}
             <strong>development</strong> and{" "}
             <strong>technological innovation</strong>.

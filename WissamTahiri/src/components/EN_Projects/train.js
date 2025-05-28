@@ -63,41 +63,37 @@ class Type_de_case {
 // Images
 /*------------------------------------------------------------*/
 const IMAGE_EAU = new Image();
-IMAGE_EAU.src = "../../../public/images/eau.png";
+IMAGE_EAU.src = "/images/eau.png";
 
 const IMAGE_FORET = new Image();
-IMAGE_FORET.src = "../../../public/images/foret.png";
+IMAGE_FORET.src = "/images/foret.png";
 
 const IMAGE_LOCO = new Image();
-IMAGE_LOCO.src = "../../../public/images/locomotive.png";
+IMAGE_LOCO.src = "/images/locomotive.png";
 
 const IMAGE_RAIL_HORIZONTAL = new Image();
-IMAGE_RAIL_HORIZONTAL.src = "../../../public/images/rail-horizontal.png";
+IMAGE_RAIL_HORIZONTAL.src = "/images/rail-horizontal.png";
 
 const IMAGE_RAIL_VERTICAL = new Image();
-IMAGE_RAIL_VERTICAL.src = "../../../public/images/rail-vertical.png";
+IMAGE_RAIL_VERTICAL.src = "/images/rail-vertical.png";
 
 const IMAGE_RAIL_BAS_VERS_DROITE = new Image();
-IMAGE_RAIL_BAS_VERS_DROITE.src =
-  "../../../public/images/rail-bas-vers-droite.png";
+IMAGE_RAIL_BAS_VERS_DROITE.src = "/images/rail-bas-vers-droite.png";
 
 const IMAGE_RAIL_DROITE_VERS_BAS = new Image();
-IMAGE_RAIL_DROITE_VERS_BAS.src =
-  "../../../public/images/rail-droite-vers-bas.png";
+IMAGE_RAIL_DROITE_VERS_BAS.src = "/images/rail-droite-vers-bas.png";
 
 const IMAGE_RAIL_DROITE_VERS_HAUT = new Image();
-IMAGE_RAIL_DROITE_VERS_HAUT.src =
-  "../../../public/images/rail-droite-vers-haut.png";
+IMAGE_RAIL_DROITE_VERS_HAUT.src = "/images/rail-droite-vers-haut.png";
 
 const IMAGE_RAIL_HAUT_VERS_DROITE = new Image();
-IMAGE_RAIL_HAUT_VERS_DROITE.src =
-  "../../../public/images/rail-haut-vers-droite.png";
+IMAGE_RAIL_HAUT_VERS_DROITE.src = "/images/rail-haut-vers-droite.png";
 
 const IMAGE_WAGON = new Image();
-IMAGE_WAGON.src = "../../../public/images/wagon.png";
+IMAGE_WAGON.src = "/images/wagon.png";
 
 const IMAGE_DEBRIS = new Image();
-IMAGE_DEBRIS.src = "../../../public/images/debris.png";
+IMAGE_DEBRIS.src = "/images/debris.png";
 
 /************************************************************/
 // Variables globales
